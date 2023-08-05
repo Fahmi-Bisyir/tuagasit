@@ -1,22 +1,13 @@
-const form = document.getElementById('myForm');
+const btn = document.querySelector("#btn");
+const inputElemnt = document.getElementById("#mn")
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
 
-    const formData = new FormData(form);
+function addParagraph() {
+    const randomNum = Math.floor(Math.random() * 1000);
+    const pContent = 'Nomornya adalah: ' + randomNum;
 
-    // Mengambil nilai input nama dan email
-    var name = formData.get('name');
-    var email = formData.get('email');
-
-    var kata = formData.get('pesan');
-    
-""
-    // Mengambil nilai hobi (dalam bentuk array)
-    var hobbies = formData.getAll('hobby');
-
-    console.log('Nama:', name);
-    console.log('Email:', email);
-    console.log('Hobi:', hobbies);
-    console.log('message:', kata);
-});
+    const newElement = document.createElement('p');
+    newElement.textContent = pContent;
+    document.body.appendChild(newElement);
+}
+btn.onclick = addParagraph;
