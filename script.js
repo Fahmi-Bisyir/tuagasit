@@ -1,13 +1,18 @@
-const btn = document.querySelector("#btn");
-const inputElemnt = document.getElementById("#mn")
+function generateRandomNumber() {
+    return Math.floor(Math.random() * 10) + 1;
+  }
 
-
-function addParagraph() {
-    const randomNum = Math.floor(Math.random() * 1000);
-    const pContent = 'Nomornya adalah: ' + randomNum;
-
-    const newElement = document.createElement('p');
-    newElement.textContent = pContent;
-    document.body.appendChild(newElement);
-}
-btn.onclick = addParagraph;
+  function calculateScore() {
+    const mano = parseInt(document.getElementById("mano").value);
+    const acaknomor = generateRandomNumber();
+ 
+    document.getElementById("nomoracak").textContent = acaknomor ;
+  
+    if (mano === acaknomor) {
+      const scoreElement = document.getElementById("score");
+      let score = parseInt(scoreElement.textContent);
+      score += 2;
+      scoreElement.textContent = score;
+    }
+  }
+  
